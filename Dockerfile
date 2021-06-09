@@ -4,3 +4,7 @@ RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sud
 RUN apt-get update && apt-get install -y \
   ros-melodic-cv-camera \
   ros-melodic-web-video-server
+
+COPY ["run.bash", "/root/run.bash"]
+RUN ["chmod", "+x", "/root/run.bash"]
+CMD ["/root/run.bash"]
